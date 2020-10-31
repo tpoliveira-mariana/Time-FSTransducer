@@ -1,0 +1,75 @@
+0   1   zero    0
+1   2   eps     0
+
+0   3   uma     0
+3   4   eps     1
+
+0   5   duas    0
+5   6   eps     2
+
+0   7   tres    0
+7   8   eps     3
+
+0   9   quatro  0
+9   10  eps     4
+
+0   11  cinco   0  
+11  12  eps     5 
+
+0   13  seis    0
+13  14  eps     6
+
+0   15  sete    0 
+15  16  eps     7 
+
+0   17  oito    0
+17  18  eps     8
+
+0   19  nove    0
+19  20  eps     9
+
+0   1   dez         1
+0   3   onze        1
+0   5   doze        1   
+0   7   treze       1
+0   9   catorze     1
+0   11  quinze      1
+0   13  dezasseis   1
+0   15  dezassete   1
+0   17  dezoito     1
+0   19  dezanove    1
+
+0   21  vinte   2
+21  22  eps     0
+21  23  e       eps
+23  3   uma     eps
+23  5   duas    eps
+23  7   tres    eps
+
+
+2   24  horas   eps
+4   24  hora    eps
+6   24  horas   eps
+8   24  horas   eps
+10  24  horas   eps
+12  24  horas   eps
+14  24  horas   eps
+16  24  horas   eps
+18  24  horas   eps     
+20  24  horas   eps 
+22  24  horas   eps
+2   24  eps     eps
+4   24  eps     eps
+6   24  eps     eps
+8   24  eps     eps
+10  24  eps     eps
+12  24  eps     eps
+14  24  eps     eps
+16  24  eps     eps
+18  24  eps     eps     
+20  24  eps     eps 
+22  24  eps     eps
+24
+
+
+
