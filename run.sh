@@ -36,11 +36,11 @@ echo -e "\nTesting transducers..."
 #fstcompose compiled/numero.fst compiled/converter.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
 echo "  -> horas:"
-echo -e "\tinput: 'tests/horas_1.txt'"
+echo -e "\tinput: tests/horas_1.txt"
 fstcompose compiled/horas_1.fst compiled/horas.fst compiled/tested_horas.fst 
 
 echo "  -> minutos:"
-echo -e "\tinput: 'tests/minutos_1.txt'"
+echo -e "\tinput: tests/minutos_1.txt"
 fstcompose compiled/minutos_1.fst compiled/minutos.fst compiled/tested_minutos.fst 
 
 echo "  -> text2num:"
