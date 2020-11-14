@@ -20,7 +20,6 @@ fstrmepsilon compiled/text2num.fst compiled/text2num.fst
 
 echo "  lazy2num -> horas_: + aux_00 + text2num"
 fstunion compiled/e_minutos.fst compiled/aux_00.fst  > compiled/minutos_00.fst
-fstrmepsilon compiled/minutos_00.fst compiled/minutos_00.fst
 fstconcat compiled/horas_:.fst compiled/minutos_00.fst > compiled/lazy2num.fst
 fstrmepsilon compiled/lazy2num.fst compiled/lazy2num.fst
 
@@ -41,6 +40,11 @@ fstarcsort compiled/lazy2num.fst compiled/lazy2num.fst
 fstcompose compiled/treated_time.fst compiled/lazy2num.fst > compiled/treated2num.fst
 fstunion compiled/treated2num.fst compiled/lazy2num.fst > compiled/rich2num.fst
 fstrmepsilon compiled/rich2num.fst compiled/rich2num.fst
+
+echo "  num2text -> horas + aux_: + e_aux + minutos + text2num"
+fstinvert compiled/text2num.fst > compiled/num2text.fst
+fstrmepsilon compiled/num2text.fst compiled/num2text.fst
+
 
 # TESTS
 echo -e "\nTesting transducers..."
@@ -93,6 +97,9 @@ fstcompose compiled/rich2num_1.fst compiled/rich2num.fst compiled/tests/tested_r
 echo -e "\tinput: tests/rich2num_2.txt"
 fstcompose compiled/rich2num_2.fst compiled/rich2num.fst compiled/tests/tested_rich2num_5.fst 
 
+echo "  -> num2text:"
+echo -e "\tinput: tests/num2text_1.txt"
+fstcompose compiled/num2text_1.fst compiled/num2text.fst compiled/tests/tested_num2text_1.fst 
 
 
 # IMAGES

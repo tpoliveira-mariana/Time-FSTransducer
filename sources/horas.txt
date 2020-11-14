@@ -1,7 +1,7 @@
 0   1   zero    0
 1   2   eps     0
 2   3   eps     eps
-2   3   horas   eps
+2   3   horas   eps 
 0   4   uma     0      
 4   3   eps     1
 4   3   hora    1
@@ -36,7 +36,7 @@
 
 0   15  vinte   2
 15  3   horas   0
-15  3   eps     0
+
 15  16  e       eps
 16  2   uma     1
 16  2   duas    2
