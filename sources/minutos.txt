@@ -1,6 +1,6 @@
 0   1   zero    0
 1   2   eps     0
-2   3   eps     eps
+2   3   eps     eps 1
 2   3   minutos eps
 0   4   um      0      
 4   3   eps     1

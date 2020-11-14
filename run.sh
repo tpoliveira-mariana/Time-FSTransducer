@@ -23,6 +23,7 @@ fstunion compiled/e_minutos.fst compiled/aux_00.fst  > compiled/minutos_00.fst
 fstconcat compiled/horas_:.fst compiled/minutos_00.fst > compiled/lazy2num.fst
 fstrmepsilon compiled/lazy2num.fst compiled/lazy2num.fst
 
+
 echo "  rich2text -> horas + aux_e + quartos + meias"
 fstproject compiled/horas.fst > compiled/horas_text.fst
 fstrmepsilon compiled/horas_text.fst compiled/horas_text.fst
@@ -100,7 +101,7 @@ fstcompose compiled/rich2num_2.fst compiled/rich2num.fst compiled/tests/tested_r
 echo "  -> num2text:"
 echo -e "\tinput: tests/num2text_1.txt"
 fstcompose compiled/num2text_1.fst compiled/num2text.fst compiled/tests/tested_num2text_1.fst 
-
+fstshortestpath compiled/tests/tested_num2text_1.fst compiled/tests/tested_num2text_1.fst
 
 # IMAGES
 echo -e "\nCreating images..."
