@@ -53,55 +53,31 @@ echo -e "\nTesting transducers..."
 #echo "'converter' -> input: 'tests/numero.txt'"
 #fstcompose compiled/numero.fst compiled/converter.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "  -> horas:"
-echo -e "\tinput: tests/horas_1.txt"
-fstcompose compiled/horas_1.fst compiled/horas.fst compiled/tested_horas.fst 
-
-echo "  -> minutos:"
-echo -e "\tinput: tests/minutos_1.txt"
-fstcompose compiled/minutos_1.fst compiled/minutos.fst compiled/tested_minutos.fst 
-
-echo "  -> text2num:"
-echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/text2num.fst compiled/tested_text2num_1.fst 
-
-echo "  -> lazy2num:"
-echo -e "\tinput: tests/lazy2num_1.txt"
-fstcompose compiled/lazy2num_1.fst compiled/lazy2num.fst compiled/tested_lazy2num_1.fst
-
-echo -e "\tinput: tests/lazy2num_2.txt"
-fstcompose compiled/lazy2num_2.fst compiled/lazy2num.fst compiled/tested_lazy2num_2.fst  
-
-echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/lazy2num.fst compiled/tested_lazy2num_3.fst 
-
-echo "  -> rich2text:"
-echo -e "\tinput: tests/rich2text_1.txt"
-fstcompose compiled/rich2text_1.fst compiled/rich2text.fst compiled/tested_rich2text_1.fst 
-
-echo -e "\tinput: tests/rich2text_2.txt"
-fstcompose compiled/rich2text_2.fst compiled/rich2text.fst compiled/tested_rich2text_2.fst 
-
 echo "  -> rich2num:"
-echo -e "\tinput: tests/lazy2num_1.txt"
-fstcompose compiled/lazy2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_1.fst 
+echo -e "\tinput: tests/sleepA_89504.txt"
+fstcompose compiled/sleepA_89504.fst compiled/rich2num.fst compiled/tested_sleepA_89504.fst 
 
-echo -e "\tinput: tests/lazy2num_2.txt"
-fstcompose compiled/lazy2num_2.fst compiled/rich2num.fst compiled/tested_rich2num_2.fst 
+echo -e "\tinput: tests/sleepB_89504.txt"
+fstcompose compiled/sleepB_89504.fst compiled/rich2num.fst compiled/tested_sleepB_89504.fst 
 
-echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_3.fst 
+echo -e "\tinput: tests/sleepC_89504.txt"
+fstcompose compiled/sleepC_89504.fst compiled/rich2num.fst compiled/tested_sleepC_89504.fst 
 
-echo -e "\tinput: tests/rich2num_1.txt"
-fstcompose compiled/rich2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_4.fst 
+echo -e "\tinput: tests/sleepD_890504.txt"
+fstcompose compiled/sleepD_89504.fst compiled/rich2num.fst compiled/tested_sleepD_89504.fst 
 
-echo -e "\tinput: tests/rich2num_2.txt"
-fstcompose compiled/rich2num_2.fst compiled/rich2num.fst compiled/tested_rich2num_5.fst 
+echo -e "\tinput: tests/BREAD.txt"
+echo -e "\tinput: tests/BREAD.txt"
+echo -e "\tinput: tests/BREAD.txt"
+echo -e "\tinput: tests/BREAD.txt"
+
 
 echo "  -> num2text:"
-echo -e "\tinput: tests/num2text_1.txt"
-fstcompose compiled/num2text_1.fst compiled/num2text.fst compiled/tested_num2text_1.fst 
-fstshortestpath compiled/tested_num2text_1.fst compiled/tested_num2text_1.fst
+echo -e "\tinput: tests/sleepE_89504.txt"
+fstcompose compiled/sleepE_89504.fst compiled/num2text.fst compiled/tested_sleepE_89504.fst 
+fstshortestpath compiled/tested_sleepE_89504.fst compiled/tested_sleepE_89504.fst
+
+echo -e "\tinput: tests/BREAD.txt"
 
 # IMAGES
 echo -e "\nCreating images..."

@@ -1,7 +1,0 @@
-0   1   dez     dez
-1   2   horas   horas
-2   3   e       e   
-3   4   vinte   vinte
-4   5   cinco   cinco
-5   6   minutos minutos
-6

@@ -1,4 +1,0 @@
-0   1   vinte   vinte 
-1   2   cinco   cinco
-2   3   minutos minutos
-3

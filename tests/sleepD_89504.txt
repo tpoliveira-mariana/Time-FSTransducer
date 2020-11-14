@@ -1,0 +1,8 @@
+0   1   vinte   vinte
+1   2   e       e
+2   3   tres    tres
+3   4   e       e
+4   5   quarenta    quarenta
+5   6   e       e
+6   7   cinco   cinco
+7
