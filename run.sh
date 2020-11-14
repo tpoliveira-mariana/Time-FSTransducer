@@ -42,10 +42,10 @@ fstcompose compiled/treated_time.fst compiled/lazy2num.fst > compiled/treated2nu
 fstunion compiled/treated2num.fst compiled/lazy2num.fst > compiled/rich2num.fst
 fstrmepsilon compiled/rich2num.fst compiled/rich2num.fst
 
+
 echo "  num2text -> horas + aux_: + e_aux + minutos + text2num"
 fstinvert compiled/text2num.fst > compiled/num2text.fst
 fstrmepsilon compiled/num2text.fst compiled/num2text.fst
-
 
 # TESTS
 echo -e "\nTesting transducers..."

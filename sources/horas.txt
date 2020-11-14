@@ -3,7 +3,7 @@
 2   3   eps     eps 1
 2   3   horas   eps 
 0   4   uma     0      
-4   3   eps     1
+4   3   eps     1   1
 4   3   hora    1
 0   6   duas    0
 6   2   eps     2
