@@ -55,62 +55,57 @@ echo -e "\nTesting transducers..."
 
 echo "  -> horas:"
 echo -e "\tinput: tests/horas_1.txt"
-fstcompose compiled/horas_1.fst compiled/horas.fst compiled/tests/tested_horas.fst 
+fstcompose compiled/horas_1.fst compiled/horas.fst compiled/tested_horas.fst 
 
 echo "  -> minutos:"
 echo -e "\tinput: tests/minutos_1.txt"
-fstcompose compiled/minutos_1.fst compiled/minutos.fst compiled/tests/tested_minutos.fst 
+fstcompose compiled/minutos_1.fst compiled/minutos.fst compiled/tested_minutos.fst 
 
 echo "  -> text2num:"
 echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/text2num.fst compiled/tests/tested_text2num_1.fst 
+fstcompose compiled/text2num_1.fst compiled/text2num.fst compiled/tested_text2num_1.fst 
 
 echo "  -> lazy2num:"
 echo -e "\tinput: tests/lazy2num_1.txt"
-fstcompose compiled/lazy2num_1.fst compiled/lazy2num.fst compiled/tests/tested_lazy2num_1.fst
+fstcompose compiled/lazy2num_1.fst compiled/lazy2num.fst compiled/tested_lazy2num_1.fst
 
 echo -e "\tinput: tests/lazy2num_2.txt"
-fstcompose compiled/lazy2num_2.fst compiled/lazy2num.fst compiled/tests/tested_lazy2num_2.fst  
+fstcompose compiled/lazy2num_2.fst compiled/lazy2num.fst compiled/tested_lazy2num_2.fst  
 
 echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/lazy2num.fst compiled/tests/tested_lazy2num_3.fst 
+fstcompose compiled/text2num_1.fst compiled/lazy2num.fst compiled/tested_lazy2num_3.fst 
 
 echo "  -> rich2text:"
 echo -e "\tinput: tests/rich2text_1.txt"
-fstcompose compiled/rich2text_1.fst compiled/rich2text.fst compiled/tests/tested_rich2text_1.fst 
+fstcompose compiled/rich2text_1.fst compiled/rich2text.fst compiled/tested_rich2text_1.fst 
 
 echo -e "\tinput: tests/rich2text_2.txt"
-fstcompose compiled/rich2text_2.fst compiled/rich2text.fst compiled/tests/tested_rich2text_2.fst 
+fstcompose compiled/rich2text_2.fst compiled/rich2text.fst compiled/tested_rich2text_2.fst 
 
 echo "  -> rich2num:"
 echo -e "\tinput: tests/lazy2num_1.txt"
-fstcompose compiled/lazy2num_1.fst compiled/rich2num.fst compiled/tests/tested_rich2num_1.fst 
+fstcompose compiled/lazy2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_1.fst 
 
 echo -e "\tinput: tests/lazy2num_2.txt"
-fstcompose compiled/lazy2num_2.fst compiled/rich2num.fst compiled/tests/tested_rich2num_2.fst 
+fstcompose compiled/lazy2num_2.fst compiled/rich2num.fst compiled/tested_rich2num_2.fst 
 
 echo -e "\tinput: tests/text2num_1.txt"
-fstcompose compiled/text2num_1.fst compiled/rich2num.fst compiled/tests/tested_rich2num_3.fst 
+fstcompose compiled/text2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_3.fst 
 
 echo -e "\tinput: tests/rich2num_1.txt"
-fstcompose compiled/rich2num_1.fst compiled/rich2num.fst compiled/tests/tested_rich2num_4.fst 
+fstcompose compiled/rich2num_1.fst compiled/rich2num.fst compiled/tested_rich2num_4.fst 
 
 echo -e "\tinput: tests/rich2num_2.txt"
-fstcompose compiled/rich2num_2.fst compiled/rich2num.fst compiled/tests/tested_rich2num_5.fst 
+fstcompose compiled/rich2num_2.fst compiled/rich2num.fst compiled/tested_rich2num_5.fst 
 
 echo "  -> num2text:"
 echo -e "\tinput: tests/num2text_1.txt"
-fstcompose compiled/num2text_1.fst compiled/num2text.fst compiled/tests/tested_num2text_1.fst 
-fstshortestpath compiled/tests/tested_num2text_1.fst compiled/tests/tested_num2text_1.fst
+fstcompose compiled/num2text_1.fst compiled/num2text.fst compiled/tested_num2text_1.fst 
+fstshortestpath compiled/tested_num2text_1.fst compiled/tested_num2text_1.fst
 
 # IMAGES
 echo -e "\nCreating images..."
 for i in compiled/*.fst; do
 	echo -e "  $(basename $i '.fst').pdf"
     fstdraw --portrait --isymbols=syms.txt --osymbols=syms.txt $i | dot -Tpdf > images/$(basename $i '.fst').pdf
-done
-
-for i in compiled/tests/*.fst; do
-	echo -e "  $(basename $i '.fst').pdf"
-    fstdraw --portrait --isymbols=syms.txt --osymbols=syms.txt $i | dot -Tpdf > images/tests/$(basename $i '.fst').pdf
 done
