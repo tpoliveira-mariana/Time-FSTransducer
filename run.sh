@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e # exit on first error
+
 mkdir -p compiled images
 
 for i in sources/*.txt tests/*.txt; do
