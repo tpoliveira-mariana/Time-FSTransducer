@@ -35,10 +35,7 @@ fstrmepsilon compiled/rich2text.fst{,}
 fstarcsort compiled/rich2text.fst{,}
 
 echo -e "\trich2num -> rich2text + lazy2num"
-fstunion compiled/horas_e_meia.fst compiled/horas_e_quarto.fst > compiled/treated_time.fst
-fstarcsort compiled/treated_time.fst compiled/treated_time.fst
-fstarcsort compiled/lazy2num.fst compiled/lazy2num.fst
-fstcompose compiled/treated_time.fst compiled/lazy2num.fst > compiled/treated2num.fst
+fstcompose compiled/rich2text.fst compiled/lazy2num.fst > compiled/treated2num.fst
 fstunion compiled/treated2num.fst compiled/lazy2num.fst > compiled/rich2num.fst
 fstrmepsilon compiled/rich2num.fst{,}
 fstarcsort compiled/rich2num.fst{,}
