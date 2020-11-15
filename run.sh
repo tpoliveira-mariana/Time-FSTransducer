@@ -36,8 +36,9 @@ fstunion compiled/treated2num.fst compiled/lazy2num.fst > compiled/rich2num.fst
 fstrmepsilon compiled/rich2num.fst{,}
 fstarcsort compiled/rich2num.fst{,}
 
-echo -e "\tnum2text -> horas + aux_: + e_aux + minutos + text2num"
+echo -e "\tnum2text -> prune(invert(text2num))"
 fstinvert compiled/text2num.fst > compiled/num2text.fst
+fstprune --weight=0 compiled/num2text.fst{,}
 fstrmepsilon compiled/num2text.fst{,}
 fstarcsort compiled/num2text.fst{,}
 
