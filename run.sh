@@ -4,7 +4,7 @@ mkdir -p compiled images
 
 for i in sources/*.txt tests/*.txt; do
 	echo "Compiling: $i"
-    fstcompile --isymbols=syms.txt --osymbols=syms.txt $i | fstarcsort > compiled/$(basename $i ".txt").fst
+	fstcompile --isymbols=syms.txt --osymbols=syms.txt $i | fstarcsort > compiled/$(basename $i ".txt").fst
 done
 
 
@@ -48,36 +48,24 @@ fstinvert compiled/text2num.fst > compiled/num2text.fst
 fstrmepsilon compiled/num2text.fst compiled/num2text.fst
 
 # TESTS
-echo -e "\nTesting transducers..."
+echo
+echo "Testing transducers..."
 
 #echo "'converter' -> input: 'tests/numero.txt'"
 #fstcompose compiled/numero.fst compiled/converter.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
-echo "  -> rich2num:"
-echo -e "\tinput: tests/sleepA_89504.txt"
-fstcompose compiled/sleepA_89504.fst compiled/rich2num.fst compiled/tested_sleepA_89504.fst 
+echo " -> rich2num:"
+for name in {sleep,wakeup}{A,B,C,D,E}_{89409,89504}; do
+    echo -e "\tinput: tests/$name.txt"
+    fstcompose "compiled/$name.fst" compiled/rich2num.fst "compiled/tested_$name.fst"
+done
 
-echo -e "\tinput: tests/sleepB_89504.txt"
-fstcompose compiled/sleepB_89504.fst compiled/rich2num.fst compiled/tested_sleepB_89504.fst 
-
-echo -e "\tinput: tests/sleepC_89504.txt"
-fstcompose compiled/sleepC_89504.fst compiled/rich2num.fst compiled/tested_sleepC_89504.fst 
-
-echo -e "\tinput: tests/sleepD_890504.txt"
-fstcompose compiled/sleepD_89504.fst compiled/rich2num.fst compiled/tested_sleepD_89504.fst 
-
-echo -e "\tinput: tests/BREAD.txt"
-echo -e "\tinput: tests/BREAD.txt"
-echo -e "\tinput: tests/BREAD.txt"
-echo -e "\tinput: tests/BREAD.txt"
-
-
-echo "  -> num2text:"
-echo -e "\tinput: tests/sleepE_89504.txt"
-fstcompose compiled/sleepE_89504.fst compiled/num2text.fst compiled/tested_sleepE_89504.fst 
-fstshortestpath compiled/tested_sleepE_89504.fst compiled/tested_sleepE_89504.fst
-
-echo -e "\tinput: tests/BREAD.txt"
+echo " -> num2text:"
+for name in {sleep,wakeup}F_{89409,89504}; do
+    echo -e "\tinput: tests/$name.txt"
+    fstcompose "compiled/$name.fst" compiled/num2text.fst "compiled/tested_$name.fst"
+    fstshortestpath "compiled/tested_$name.fst" "compiled/tested_$name.fst"
+done
 
 # IMAGES
 echo -e "\nCreating images..."
