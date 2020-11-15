@@ -1,47 +1,51 @@
-0	1	zero	0
-1	2	eps	0
-2	3	eps	eps	1
-2	3	horas	eps
-0	4	uma	0
-4	3	eps	1	1
-4	3	hora	1
-0	6	duas	0
-6	2	eps	2
-0	7	tres	0
-7	2	eps	3
-0	8	quatro	0
-8	2	eps	4
-0	9	cinco	0
-9	2	eps	5
-0	10	seis	0
-10	2	eps	6
-0	11	sete	0
-11	2	eps	7
-0	12	oito	0
-12	2	eps	8
-0	13	nove	0
-13	2	eps	9
+0	10	zero	0
+10	14	eps	0
+0	1	uma	0
+0	2	duas	0
+2	14	eps	2
+0	3	tres	0
+3	14	eps	3
+0	4	quatro	0
+4	14	eps	4
+0	5	cinco	0
+5	14	eps	5
+0	6	seis	0
+6	14	eps	6
+0	7	sete	0
+7	14	eps	7
+0	8	oito	0
+8	14	eps	8
+0	9	nove	0
+9	14	eps	9
 
-0	1	dez	1
-0	14	onze	1
-14	2	eps	1
-0	6	doze	1
-0	7	treze	1
-0	8	catorze	1
-0	9	quinze	1
-0	10	dezasseis	1
-0	11	dezassete	1
-0	12	dezoito	1
-0	13	dezanove	1
+0	10	dez	1
+0	11	onze	1
+0	2	doze	1
+0	3	treze	1
+0	4	catorze	1
+0	5	quinze	1
+0	6	dezasseis	1
+0	7	dezassete	1
+0	8	dezoito	1
+0	9	dezanove	1
 
-0	15	vinte	2
-15	2	eps	0
+11	14	eps	1
 
-15	16	e	eps
-16	2	uma	1
-16	2	duas	2
-16	2	tres	3
-3
+0	12	vinte	2
+12	14	eps	0
+
+12	13	e	eps
+13	14	uma	1
+13	14	duas	2
+13	14	tres	3
+
+1	15	eps	1	1
+1	15	hora	1
+
+14	15	eps	eps	1
+14	15	horas	eps
+
+15
 
 
 
