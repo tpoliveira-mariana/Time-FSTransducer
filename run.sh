@@ -29,9 +29,8 @@ echo -e "\trich2text -> horas + aux_e + quartos + meias"
 fstproject compiled/horas.fst > compiled/horas_text.fst
 fstproject compiled/aux_e.fst > compiled/e_text.fst
 fstconcat compiled/horas_text.fst compiled/e_text.fst > compiled/horas_e_text.fst
-fstconcat compiled/horas_e_text.fst compiled/meias.fst > compiled/horas_e_meia.fst
-fstconcat compiled/horas_e_text.fst compiled/quartos.fst > compiled/horas_e_quarto.fst
-fstunion compiled/horas_e_meia.fst compiled/horas_e_quarto.fst > compiled/rich2text.fst
+fstunion compiled/meias.fst compiled/quartos.fst > compiled/meias_union_quartos.fst
+fstconcat compiled/horas_e_text.fst compiled/meias_union_quartos.fst > compiled/rich2text.fst
 fstrmepsilon compiled/rich2text.fst{,}
 fstarcsort compiled/rich2text.fst{,}
 
