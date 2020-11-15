@@ -52,13 +52,13 @@ echo "Testing transducers..."
 #fstcompose compiled/numero.fst compiled/converter.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint --acceptor --isymbols=./syms.txt
 
 echo " -> rich2num:"
-for name in {sleep,wakeup}{A,B,C,D,E}_{89409,89504}; do
+for name in {sleep,wakeup}{A,B,C,D,E,F}_{89409,89504}; do
     echo -e "\tinput: tests/$name.txt"
     fstcompose "compiled/$name.fst" compiled/rich2num.fst "compiled/tested_$name.fst"
 done
 
 echo " -> num2text:"
-for name in {sleep,wakeup}F_{89409,89504}; do
+for name in {sleep,wakeup}G_{89409,89504}; do
     echo -e "\tinput: tests/$name.txt"
     fstcompose "compiled/$name.fst" compiled/num2text.fst "compiled/tested_$name.fst"
     fstshortestpath "compiled/tested_$name.fst" "compiled/tested_$name.fst"
