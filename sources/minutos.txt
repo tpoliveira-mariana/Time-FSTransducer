@@ -1,7 +1,5 @@
 0	1	zero	0
 1	2	eps	0
-2	3	eps	eps	1
-2	3	minutos	eps
 0	4	um	0
 4	3	eps	1	1
 4	3	minuto	1
@@ -35,28 +33,24 @@
 0	12	dezanove	1
 
 0	14	vinte	2
-14	2	cinco	5
-14	2	seis	6
-14	2	sete	7
-14	3	eps	0
-14	3	minutos	0
-14	16	e	eps
+0	14	trinta	3
+0	14	quarenta	4
+0	14	cinquenta	5
+14	2	eps	0
+14	15	e	eps
 
-0	15	trinta	3
-0	15	quarenta	4
-0	15	cinquenta	5
 
-15	3	minutos	0
-15	3	eps	0
-15	16	e	eps
-16	2	um	1
-16	2	dois	2
-16	2	tres	3
-16	2	quatro	4
-16	2	cinco	5
-16	2	seis	6
-16	2	sete	7
-16	2	oito	8
-16	2	nove	9
+15	2	um	1
+15	2	dois	2
+15	2	tres	3
+15	2	quatro	4
+15	2	cinco	5
+15	2	seis	6
+15	2	sete	7
+15	2	oito	8
+15	2	nove	9
+
+2	3	eps	eps	1
+2	3	minutos	eps
 
 3
