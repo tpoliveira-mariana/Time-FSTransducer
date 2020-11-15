@@ -7,34 +7,30 @@ for i in sources/*.txt tests/*.txt; do
 	fstcompile --isymbols=syms.txt --osymbols=syms.txt $i | fstarcsort > compiled/$(basename $i ".txt").fst
 done
 
-
 # TRANSDUCERS
 echo
 echo "Building transducers..."
 
-echo -e "\ttext2num -> horas + aux_: + e_aux + minutos"
-fstconcat compiled/horas.fst compiled/aux_:.fst > compiled/horas_:.fst 
-fstconcat compiled/aux_e.fst compiled/minutos.fst > compiled/e_minutos.fst
-fstconcat compiled/horas_:.fst compiled/e_minutos.fst > compiled/text2num.fst
+echo -e "\ttext2num -> horas . aux_e . minutos"
+fstconcat compiled/horas.fst compiled/aux_e.fst > compiled/horas_e.fst
+fstconcat compiled/horas_e.fst compiled/minutos.fst > compiled/text2num.fst
 fstrmepsilon compiled/text2num.fst{,}
 fstarcsort compiled/text2num.fst{,}
 
-echo -e "\tlazy2num -> horas_: + aux_00 + text2num"
-fstunion compiled/e_minutos.fst compiled/aux_00.fst  > compiled/minutos_00.fst
-fstconcat compiled/horas_:.fst compiled/minutos_00.fst > compiled/lazy2num.fst
+echo -e "\tlazy2num -> horas . aux_e . (minutos or aux_00)"
+fstunion compiled/minutos.fst compiled/aux_00.fst  > compiled/minutos_or_00.fst
+fstconcat compiled/horas_e.fst compiled/minutos_or_00.fst > compiled/lazy2num.fst
 fstrmepsilon compiled/lazy2num.fst{,}
 fstarcsort compiled/lazy2num.fst{,}
 
-echo -e "\trich2text -> horas + aux_e + quartos + meias"
-fstproject compiled/horas.fst > compiled/horas_text.fst
-fstproject compiled/aux_e.fst > compiled/e_text.fst
-fstconcat compiled/horas_text.fst compiled/e_text.fst > compiled/horas_e_text.fst
-fstunion compiled/meias.fst compiled/quartos.fst > compiled/meias_union_quartos.fst
-fstconcat compiled/horas_e_text.fst compiled/meias_union_quartos.fst > compiled/rich2text.fst
+echo -e "\trich2text -> project(horas . aux_e) . (meias or quartos)"
+fstproject compiled/horas_e.fst > compiled/horas_e_text.fst
+fstunion compiled/meias.fst compiled/quartos.fst > compiled/meias_or_quartos.fst
+fstconcat compiled/horas_e_text.fst compiled/meias_or_quartos.fst > compiled/rich2text.fst
 fstrmepsilon compiled/rich2text.fst{,}
 fstarcsort compiled/rich2text.fst{,}
 
-echo -e "\trich2num -> rich2text + lazy2num"
+echo -e "\trich2num -> lazy2num(rich2text) or lazy2num"
 fstcompose compiled/rich2text.fst compiled/lazy2num.fst > compiled/treated2num.fst
 fstunion compiled/treated2num.fst compiled/lazy2num.fst > compiled/rich2num.fst
 fstrmepsilon compiled/rich2num.fst{,}
