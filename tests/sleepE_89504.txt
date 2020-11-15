@@ -1,6 +1,8 @@
-0   1   2   2
-1   2   3   3
-2   3   :   :
-3   4   4   4
-4   5   5   5
-5
+0   1   vinte   vinte
+1   2   e       e
+2   3   tres    tres
+3   4   horas   horas
+4   5   e       e
+5   6   tres    tres
+6   7   quartos quartos
+7
